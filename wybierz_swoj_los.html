@@ -51,18 +51,24 @@
 
     <script>
         $(function() {
-            $('.container_obrazka_los').on('click', function() {
-                var text = $(this).data('text');
-                $('#wybrany-tekst').text(text).fadeIn();
-                $('.powiadomienie_los').fadeIn();
-                $('.container_obrazka_los').fadeOut();
-                $('h1').text('Gratulacje, właśnie poznałeś swój los!').fadeIn();
-            });
-
-            $('#wyloguj').click(function() {
-                window.location.href = 'index.html'; // Przekierowanie do index.html
-            });
-        });
+    $('.container_obrazka_los').on('click', function() {
+        // Pobranie tekstu przypisanego do elementu z atrybutu data-text
+        var text = $(this).data('text');
+        // Ustawienie tekstu w elemencie o #wybrany-tekst oraz płynne jego wyświetlenie
+        $('#wybrany-tekst').text(text).fadeIn(2000);
+        // Wyświetlenie elementu z klasą .powiadomienie_los
+        $('.powiadomienie_los').fadeIn(2000);
+        // Ukrycie wszystkich elementów z klasą .container_obrazka_los
+        $('.container_obrazka_los').fadeOut(2000);
+        // Ustawienie nowego tekstu w nagłówku h1 oraz płynne jego wyświetlenie
+        $('h1').text('Gratulacje, właśnie poznałeś swój los!').fadeIn(2000);
+    });
+    // Ustawienie zdarzenia kliknięcia na przycisk #wyloguj
+    $('#wyloguj').click(function() {
+        // Przekierowanie użytkownika do strony index.html
+        window.location.href = 'index.html'; 
+    });
+});
     </script>
 </body>
 </html>
