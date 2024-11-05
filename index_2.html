@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang = "pl">
+<head>
+    <meta charset = "UTF-8" />
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+    <link rel = "shortcut icon" href = "icon.png" type = "image/x-icon" />
+    <title>Astrologia - główna strona</title>
+    <link rel = "stylesheet" href = "styles.css" />
+    <script src = "https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src = "scripts.js"></script>
+</head>
+
+<body>
+
+    <div class = "header"> <!-- Główna sekcja nagłówka -->
+        <div class = "title">
+            <h2>Już dziś dowiedz się, co czeka Cię w przyszłości!</h2> <!-- Tytuł strony -->
+        </div>
+        
+        <div class = "komunikatError" style = "display: none;"> <!-- Sekcja błędu, domyślnie ukryta -->
+            <span style = "color: brown;">ERROR: </span>
+            <span id = "tekst_error"></span> <!-- Miejsce na tekst błędu -->
+            <button class = "przyciskError">Ukryj</button> <!-- Przycisk do ukrycia błędu -->
+        </div>
+
+        <div class = "left"> <!-- Lewa strona strony -->
+            <div class = "kula"> <!-- Interaktywny element (przycisk) -->
+                <div class = "tekst_przy_najechaniu">Kliknij mnie podwójnie</div> <!-- Tekst podpowiedzi -->
+            </div>
+
+            <form id = "form_1"> <!-- Formularz do wprowadzenia znaku zodiaku, wieku i płci -->
+                <label><b>Znak zodiaku: </b></label>
+                <select name = "znak_zodiaki" id = "znak_zodiaki"> <!-- Lista rozwijana dla znaków zodiaku -->
+
+                    <option>Panna</option>
+                    <option>Rak</option>
+                    <option>Byk</option>
+                    <option>Bliźnięta</option>
+                    <option>Strzelec</option>
+                    <option>Koziorożec</option>
+                    <option>Wodnik</option>
+                    <option>Waga</option>
+                    <option>Skorpion</option>
+                    <option>Baran</option>
+                    <option>Lew</option>
+                    <option>Ryby</option>
+
+                </select>
+                <br/>
+                
+                <label><b>Wiek: </b></label>
+                <input type = "number" name = "wiek" id = "wiek" min = "1" max = "100" required /> <!-- Pole do wprowadzenia wieku (wymagane) -->
+                <br/>
+
+                <label><b>Płeć: </b></label><br/>
+                <input type = "radio" name = "plec" value = "mężczyzna" required /> Mężczyzna <!-- Pole wymagane -->
+                <input type = "radio" name = "plec" value = "kobieta" required /> Kobieta <!-- Pole wymagane -->
+                <br/><br/>
+                <button type = "submit" class = "przycisk_form_1">Wyślij</button> <!-- Przycisk do wysyłania formularza -->
+            </form>
+        </div>
+
+        <div class = "right"> <!-- Prawa strona strony -->
+            <div class = "tekst_2">Nie znasz swojego znaku zodiaku?</div>
+            <br/>
+            <button class = "przycisk_form_2">Sprawdź!</button> <!-- Przycisk do sprawdzenia znaku zodiaku -->
+
+            <form id = "form_2"> <!-- Formularz do wprowadzenia daty urodzenia w celu określenia znaku zodiaku -->
+                <label>Podaj dzień urodzenia</label><br/>
+                <input type = "number" name = "dzien" id = "dzien" min = "1" max = "31" required /> <!-- Pole do wprowadzenia dnia urodzenia (wymagane) -->
+                <br/>
+                
+                <label>Jaki miesiąc?</label><br/>
+                <select name = "miesiac" id = "miesiac" required> <!-- Lista rozwijana dla miesiąca urodzenia (wymagana) -->
+
+                    <option value = "styczen">Styczeń</option>
+                    <option value = "luty">Luty</option>
+                    <option value = "marzec">Marzec</option>
+                    <option value = "kwiecien">Kwiecień</option>
+                    <option value = "maj">Maj</option>
+                    <option value = "czerwiec">Czerwiec</option>
+                    <option value = "lipiec">Lipiec</option>
+                    <option value = "sierpien">Sierpień</option>
+                    <option value = "wrzesien">Wrzesień</option>
+                    <option value = "pazdziernik">Październik</option>
+                    <option value = "listopad">Listopad</option>
+                    <option value = "grudzien">Grudzień</option>
+                    
+                </select>
+
+                <br/>
+                <button type = "submit" class = "przycisk_form_3">Wyślij</button> <!-- Przycisk do wysyłania drugiego formularza -->
+            </form>        
+        </div>
+
+        <div id = "wynikZodiaku" style = "display: none;"> <!-- Sekcja do wyświetlania wyniku zodiaku, domyślnie ukryta -->
+            <img id = "obraz_zodiaku" src = "" alt = "znak zodiaku" /> <!-- Obraz znaku zodiaku -->
+            <p id = "opis_zodiaku"></p> <!-- Akapit z opisem zodiaku -->
+        </div>
+
+        <div id = "marquee"> <!-- Przewijany tekst dla kredytów projektu -->
+            <div id = "marquee-text">Autorzy projektu: Maksym Baikevych, Martyna Butajło</div>
+        </div>
+    </div>
+
+</body>
+</html>

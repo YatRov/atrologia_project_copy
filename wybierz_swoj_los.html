@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <title>Wybierz Swój Los</title>
+    <style>
+        /* Style ciała strony */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('stars.jpg');
+            background-size: cover;
+            padding: 20px;
+            color: #fff;
+        }      
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1 class="tytul_los">Wybierz swój los poniżej!</h1>
+    <hr>
+    <div class="obrazy_los">
+        <div class="container_obrazka_los" data-image="image1.jpg" data-text="Oto Twój los: Za niedługo wszystko stanie się dla Ciebie łatwe, a wszystkie Twoje problemy znikną w mgnieniu oka! Jedyne co musisz zrobić, to uwierzyć.">
+            <img src="gt1.png" alt="Obraz 1">
+        </div>
+        <div class="container_obrazka_los" data-image="image2.jpg" data-text="Oto Twój los: Staniesz się ambitny bardziej niż zawsze, każdy Twój plan się powiedzie i będziesz odnosił wiele sukcesów!">
+            <img src="gt2.png" alt="Obraz 2">
+        </div>
+        <div class="container_obrazka_los" data-image="image3.jpg" data-text="Oto Twój los: Jeśli teraz nie masz chęci do wielu rzeczy, to uwierz, że za niedługo wszystko się zmieni! Nie tylko odnajdziesz chęci, ale będziesz chciał robić tak wiele, że teraz nie jesteś w stanie sobie tego wyobrazić!">
+            <img src="gt3.png" alt="Obraz 3">
+        </div>
+        <div class="container_obrazka_los" data-image="image4.jpg" data-text="Oto Twój los: Otrzymasz coś wyjątkowego, co sprawi Ci niewiarygodne szczęście, nie porzucaj tego!">
+            <img src="gt4.png" alt="Obraz 4">
+        </div>
+        <div class="container_obrazka_los" data-image="image5.jpg" data-text="Oto Twój los: Otrzymasz wyjątkową radę, ale czy się do niej zastosujesz? Będzie miało to ogromne znaczenie dla Twojej przyszłości!">
+            <img src="gt5.png" alt="Obraz 5">
+        </div>
+        <div class="container_obrazka_los" data-image="image6.jpg" data-text="Oto Twój los: Poznasz kogoś, kto pomoże Ci osiągnąć więcej, niż Ci się wydaje! Zaufaj tylko.">
+            <img src="gt6.png" alt="Obraz 6">
+        </div>
+    </div>
+
+    <div class="opis_los" id="wybrany-tekst"></div>
+    <div class="powiadomienie_los">
+        <h2>Jeśli chcesz wyjść ze strony naciśnij przycisk_wylogowanie:</h2>
+        <button class="przycisk_wylogowanie" id="wyloguj">Wyloguj</button>
+    </div>
+
+    <script>
+        $(function() {
+            $('.container_obrazka_los').on('click', function() {
+                var text = $(this).data('text');
+                $('#wybrany-tekst').text(text).fadeIn();
+                $('.powiadomienie_los').fadeIn();
+                $('.container_obrazka_los').fadeOut();
+                $('h1').text('Gratulacje, właśnie poznałeś swój los!').fadeIn();
+            });
+
+            $('#wyloguj').click(function() {
+                window.location.href = 'index.html'; // Przekierowanie do index.html
+            });
+        });
+    </script>
+</body>
+</html>

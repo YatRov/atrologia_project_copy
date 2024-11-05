@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
+    <title>Astrologia</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+
+    <div class="header"> <!-- Główna sekcja nagłówka -->
+        <div class="title">
+            <h2>Logowanie do systemu astrologicznego</h2> <!-- Tytuł strony -->
+        </div>
+
+        <div class="login-container">
+            <form id="login-form">
+
+                <h1>Logowanie</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Login" id="login">
+                </div>
+
+                <div class="input-box">
+                    <input type="password" placeholder="Hasło" id="haslo">
+                </div>
+                <div class="error-komunikat-form" >Błędny login lub hasło!</div>
+
+                <button type="submit" class="przycisk_logowanie">Zaloguj się</button>
+            </form>
+        </div>
+    
+
+        <div id="marquee"> <!-- Przewijany tekst dla kredytów projektu -->
+            <div id="marquee-text">Autorzy projektu: Maksym Baikevych, Martyna Butajło</div>
+        </div>
+    </div>
+</body>
+</html>
